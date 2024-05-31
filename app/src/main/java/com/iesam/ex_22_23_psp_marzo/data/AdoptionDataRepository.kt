@@ -8,9 +8,7 @@ class AdoptionDataRepository(private val remoteDataSource: AdoptionRemoteDataSou
     AdoptionRepository {
 
 
-    override fun getAdoptions(): List<Animal> {
-        return remoteDataSource.getAdoptions().apply {
-            // Ejercicio 2. Descomentar.
-        }
+    override suspend fun getAdoptions(): List<Animal> {
+        return remoteDataSource.getAdoptions()
     }
 }
